@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" routerLink="">NewsWeb</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" routerLink="">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" routerLink="tech">Tech News</a>
+                </li>
+
+            </ul>
+            <form class="d-flex">
+                <input [(ngModel)]="topic" [ngModelOptions]="{standalone: true}" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button (click)="search()" class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3 mt-3 mb-3" *ngFor="let d of TeslatopheadingDisplay">
+            <div class="box">
+                <img src="{{d.urlToImage}}">
+                <h5>{{d.title}}</h5>
+                <a href="{{d.content}}" target="_blank" class="btn btn-dark btn-sm mt-2">Read more...</a>
+                <br>
+                <small>Published At:{{d.publishedAt}}</small>
+            </div>
+        </div>
+    </div>
+</div>
