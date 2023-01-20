@@ -14,7 +14,7 @@ export class TopheadingComponent implements OnInit {
     this.search()
   }
   search(){
-    this.service.TeslatopHeading(this.topic).subscribe((response:any)=>{
+    this.service.TeslatopHeading().subscribe((response:any)=>{
       console.log(response)
       if(response.status=='ok')
       {

@@ -12,11 +12,15 @@ export class NewapiservicesService {
   // TeslatopHeading():Observable<any>{
   //   return this.http.get(this.Teslanewsapiurl)
   // }
-  TeslatopHeading(topic:any):Observable<any>{
-    return this.http.get('https://newsapi.org/v2/everything?q='+topic+'&from=2022-03-09&sortBy=publishedAt&apiKey=43feb231c732491a9ef600ba93e586ea')
+  TeslatopHeading():Observable<any>{
+    return this.http.get('https://newsapi.org/v2/everything?q=tesla&from=2022-12-20&sortBy=publishedAt&apiKey=43feb231c732491a9ef600ba93e586ea')
+    // return this.http.get('https://newsapi.org/v2/everything?q='+topic+'&from=2022-03-09&sortBy=publishedAt&apiKey=43feb231c732491a9ef600ba93e586ea')
   }
 
   techheading():Observable<any>{
     return this.http.get(this.techapiurl)
+  }
+  getcontacts(){
+    return this.http.get('http://localhost:4200/contacts')
   }
 }
